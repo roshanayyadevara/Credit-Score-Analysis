@@ -1,0 +1,245 @@
+mod0 = glm(Appl~1, family = "binomial")
+summary(mod0)
+## 
+## Call:
+## glm(formula = Appl ~ 1, family = "binomial")
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)   0.8954     0.2204   4.063 4.85e-05 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 120.43  on 99  degrees of freedom
+## Residual deviance: 120.43  on 99  degrees of freedom
+## AIC: 122.43
+## 
+## Number of Fisher Scoring iterations: 4
+Model 1
+mod1 = glm(Appl~Age, family = "binomial")
+summary(mod1)
+## 
+## Call:
+## glm(formula = Appl ~ Age, family = "binomial")
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)  
+## (Intercept)  1.82998    0.92180   1.985   0.0471 *
+## Age         -0.02882    0.02731  -1.056   0.2911  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 120.43  on 99  degrees of freedom
+## Residual deviance: 119.32  on 98  degrees of freedom
+## AIC: 123.32
+## 
+## Number of Fisher Scoring iterations: 4
+Model 2
+mod2 = glm(Appl~Inc, family = "binomial")
+summary(mod2)
+## 
+## Call:
+## glm(formula = Appl ~ Inc, family = "binomial")
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)  
+## (Intercept)  -0.3394     0.5834  -0.582   0.5608  
+## Inc           0.3817     0.1786   2.138   0.0326 *
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 120.43  on 99  degrees of freedom
+## Residual deviance: 114.40  on 98  degrees of freedom
+## AIC: 118.4
+## 
+## Number of Fisher Scoring iterations: 4
+Model 3
+mod3 = glm(Appl~Age+Inc, family = "binomial")
+summary(mod3)
+## 
+## Call:
+## glm(formula = Appl ~ Age + Inc, family = "binomial")
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)  
+## (Intercept)  1.02284    0.98738   1.036   0.3002  
+## Age         -0.05034    0.02911  -1.730   0.0837 .
+## Inc          0.46508    0.19430   2.394   0.0167 *
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 120.43  on 99  degrees of freedom
+## Residual deviance: 111.35  on 97  degrees of freedom
+## AIC: 117.35
+## 
+## Number of Fisher Scoring iterations: 5
+Model 4
+mod4 = glm(Appl~Age+Inc+Home, family = "binomial")
+summary(mod4)
+## 
+## Call:
+## glm(formula = Appl ~ Age + Inc + Home, family = "binomial")
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)  
+## (Intercept)  1.05219    0.99920   1.053   0.2923  
+## Age         -0.05143    0.02965  -1.735   0.0828 .
+## Inc          0.45636    0.19946   2.288   0.0221 *
+## HomeY        0.10015    0.52532   0.191   0.8488  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 120.43  on 99  degrees of freedom
+## Residual deviance: 111.31  on 96  degrees of freedom
+## AIC: 119.31
+## 
+## Number of Fisher Scoring iterations: 5
+Model 5
+Inc2=Inc^2
+mod5 = glm(Appl~Age+Inc2+Der+Home, family = "binomial")
+summary(mod5)
+## 
+## Call:
+## glm(formula = Appl ~ Age + Inc2 + Der + Home, family = "binomial")
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)  2.26962    1.11046   2.044 0.040967 *  
+## Age         -0.06225    0.03448  -1.806 0.070978 .  
+## Inc2         0.11434    0.04144   2.759 0.005790 ** 
+## Der         -1.41336    0.41434  -3.411 0.000647 ***
+## HomeY        0.19434    0.60571   0.321 0.748325    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 120.430  on 99  degrees of freedom
+## Residual deviance:  89.216  on 95  degrees of freedom
+## AIC: 99.216
+## 
+## Number of Fisher Scoring iterations: 6
+Model 6
+Inc3=Inc^3
+mod6 = glm(Appl~Age+Inc3+Home+SelfEm, family = "binomial")
+summary(mod6)
+## Call:
+## glm(formula = Appl ~ Age + Inc3 + Home + SelfEm, family = "binomial")
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)   
+## (Intercept)  2.34632    0.99222   2.365  0.01804 * 
+## Age         -0.05206    0.03031  -1.718  0.08586 . 
+## Inc3         0.01070    0.00512   2.090  0.03659 * 
+## HomeY       -0.09238    0.54122  -0.171  0.86447   
+## SelfEmY     -1.85759    0.69579  -2.670  0.00759 **
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 120.43  on 99  degrees of freedom
+## Residual deviance: 103.07  on 95  degrees of freedom
+## AIC: 113.07
+## 
+## Number of Fisher Scoring iterations: 6
+Model 7
+mod7 = glm(Appl~Age+Inc3+Der+Home+SelfEm, family = "binomial")
+summary(mod7)
+## 
+## Call:
+## glm(formula = Appl ~ Age + Inc3 + Der + Home + SelfEm, family = "binomial")
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)  3.18549    1.20491   2.644 0.008199 ** 
+## Age         -0.06755    0.03644  -1.854 0.063748 .  
+## Inc3         0.01951    0.00708   2.756 0.005854 ** 
+## Der         -1.39435    0.41123  -3.391 0.000697 ***
+## HomeY        0.10934    0.63189   0.173 0.862618    
+## SelfEmY     -2.04774    0.77131  -2.655 0.007933 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 120.430  on 99  degrees of freedom
+## Residual deviance:  81.327  on 94  degrees of freedom
+## AIC: 93.327
+## 
+## Number of Fisher Scoring iterations: 7
+resd<-residuals(mod7,family="pearson")
+resd
+##             1             2             3             4             5 
+##  0.3916223813  0.7152642512  1.1828623464  0.6606705840  0.0001706047 
+##             6             7             8             9            10 
+##  0.5190369426  0.3961550904  1.3744967163  0.5364475416  0.5198396575 
+##            11            12            13            14            15 
+##  0.6291028494 -1.4445247086 -0.3413089706  0.6002065029  0.7691979982 
+##            16            17            18            19            20 
+##  0.7370556971  0.5426161623 -0.0263509999  0.0001697797 -0.2023272265 
+##            21            22            23            24            25 
+##  0.7308751764 -1.2773591168  0.7404028880  0.9324267728  0.5940801975 
+##            26            27            28            29            30 
+##  0.3196381546 -1.5107283556 -1.9611986713 -1.7568460297  0.2063648144 
+##            31            32            33            34            35 
+##  0.5372960411  0.9848596352 -0.7172959343  0.4649627015  0.4827170095 
+##            36            37            38            39            40 
+##  0.0716211852 -0.3225262832  0.1555626208  0.1971662653  0.2688300353 
+##            41            42            43            44            45 
+##  0.9087896761  0.5108092024 -1.7224197075  0.6997162426  0.8047362576 
+##            46            47            48            49            50 
+## -0.9203325003  0.8226502681 -0.7243468626  0.5840228306  0.0994621217 
+##            51            52            53            54            55 
+## -1.4935207777  0.5738985226  0.5372470358  0.5056208989  0.5796049486 
+##            56            57            58            59            60 
+##  2.0449904310  0.3047538636  1.3797811940 -1.2893508101  0.5447980397 
+##            61            62            63            64            65 
+##  0.7427928263  0.6084681889  0.5385824380  0.4844625182 -1.0062805165 
+##            66            67            68            69            70 
+## -1.0473824058  0.3817897401  0.6330883730 -1.2220114590  0.4895514962 
+##            71            72            73            74            75 
+##  0.6372434208  0.6296373101  0.5993084506  0.7651367847  0.6150229096 
+##            76            77            78            79            80 
+## -0.9608956152  0.3798053068  0.5127325977  0.6920821960  0.7005500538 
+##            81            82            83            84            85 
+## -2.1491728045  1.8251427203 -2.0290893813  0.6357955952 -0.4972798183 
+##            86            87            88            89            90 
+##  0.0268314283 -2.1369663614 -1.9027650331 -0.4204519185 -1.0003607028 
+##            91            92            93            94            95 
+## -0.2269180009 -1.4799055669  0.9543044010 -0.1352081863  0.0032980607 
+##            96            97            98            99           100 
+##  0.5599955472  0.2016490455  0.7872716644  0.1926881547  0.2520622020
+Simplest Model
+Simplest_Model= glm(Appl~Inc3+Der+SelfEm, family = "binomial")
+summary(Simplest_Model)
+## 
+## Call:
+## glm(formula = Appl ~ Inc3 + Der + SelfEm, family = "binomial")
+## 
+## Coefficients:
+##              Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)  1.079855   0.350903   3.077 0.002088 ** 
+## Inc3         0.018045   0.006724   2.684 0.007279 ** 
+## Der         -1.307371   0.386503  -3.383 0.000718 ***
+## SelfEmY     -1.873458   0.736854  -2.543 0.011006 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 120.430  on 99  degrees of freedom
+## Residual deviance:  85.087  on 96  degrees of freedom
+## AIC: 93.087
+## 
+## Number of Fisher Scoring iterations: 7
