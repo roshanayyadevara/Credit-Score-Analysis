@@ -11,14 +11,14 @@ Overview of the problem
 In this problem we are going to analyse the data of credit score and understand the customer behaviour and as well as credit the credit scoring. By analysing the data, we try to understand “which variable gives strongest relationship for credit acceptance and creditworthiness of costumer”. In this dataset we have six variables of total those are Age, dependent income(Inc), home owner(Home), self-employee(SelfEm), Number of notice of insolvency(Der) and Application Status(Appl).  Out this six variables Appl is the response variables and remaining are predictors. Home and SelfEm are categorical variables and Age ,Inc are continuous variables. This kind of study is called retrospective study, where we have more than one explanatory variable and the response variable is binary, for such type of categorical response and retrospective study logistic regression is the good model.                                                                                                  
 Fitting the below mentioned in the logistic regression and calculating the G2 statistic for the models mentioned.   
 
-# Model 0  logit Px=0
-# Model 1 logit PAge=0+1Age
-# Model 2 logit PInc=0+1Inc
-# Model 3 logit PAge,Inc=0+1Age+2Inc
-# Model 4 logit PAge,Inc,Home=0+1Age+2Inc+3Home
-# Model 5 logit PAge,Inc,Der,Home= 0+1Age+2Inc2+3Der+4Home
-# Model 6 logit PAge,Inc,Home,SelfEm= 0+1Age+2Inc3+3Home+4SelfEm
-# Model 7 logit PAge,Inc,Der,Home,SelfEm=0+1Age+2Inc3+3Der+4Home+5SelfEm
+Model 0  logit Px=0
+Model 1 logit PAge=0+1Age
+Model 2 logit PInc=0+1Inc
+Model 3 logit PAge,Inc=0+1Age+2Inc
+Model 4 logit PAge,Inc,Home=0+1Age+2Inc+3Home
+Model 5 logit PAge,Inc,Der,Home= 0+1Age+2Inc2+3Der+4Home
+Model 6 logit PAge,Inc,Home,SelfEm= 0+1Age+2Inc3+3Home+4SelfEm
+Model 7 logit PAge,Inc,Der,Home,SelfEm=0+1Age+2Inc3+3Der+4Home+5SelfEm
 
 # Performing the forward selection model
 G2Model0-G2Model 1=120.43-119.32=1.11 ,df=1 
